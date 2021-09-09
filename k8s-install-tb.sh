@@ -91,6 +91,11 @@ if [ "$PLATFORM" == "aws-eks" ]; then
   kubectl apply -f common/ingress.yml
 fi
 
+if [ "$PLATFORM" == "az-aks" ]; then
+  kubectl apply -f common/storageclass-aks.yml
+  kubectl apply -f common/ingress.yml
+fi
+
 if [ "$PLATFORM" == "gcp" ]; then
   kubectl apply -f common/ingress.yml
 fi
@@ -101,6 +106,8 @@ fi
 
 if [ "$PLATFORM" == "aws" ]; then
   kubectl apply -f common/tb-node-license-pv-claim-aws.yml
+elif [ "$PLATFORM" == "az-aks" ]; then
+  kubectl apply -f common/tb-node-license-pv-claim-aks.yml
 else
   kubectl apply -f common/tb-node-license-pv-claim.yml
 fi

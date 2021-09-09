@@ -36,6 +36,8 @@ if [ "$PLATFORM" == "minikube" ]; then
     kubectl apply -f $PLATFORM/routes.yml
 elif [ "$PLATFORM" == "aws-eks" ]; then
     kubectl apply -f common/routes.yml
+elif [ "$PLATFORM" == "az-aks" ]; then
+    kubectl apply -f common/routes.yml
 elif [ "$PLATFORM" == "gcp" ]; then
     kubectl apply -f common/routes.yml
 elif [ "$PLATFORM" == "aws" ]; then

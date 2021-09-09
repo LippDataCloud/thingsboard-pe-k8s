@@ -1,0 +1,25 @@
+kind: StorageClass
+apiVersion: storage.k8s.io/v1
+metadata:
+  name: standard
+  # annotations:
+  #   storageclass.kubernetes.io/is-default-class: "true"
+provisioner: kubernetes.io/azure-disk
+allowVolumeExpansion: true
+reclaimPolicy: Delete
+parameters:
+  cachingmode: ReadOnly
+  storageaccounttype: Standard_LRS
+  kind: managed
+---
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: fast
+provisioner: kubernetes.io/azure-disk
+allowVolumeExpansion: true
+reclaimPolicy: Delete
+parameters:
+  cachingmode: ReadOnly
+  storageaccounttype: StandardSSD_LRS
+  kind: managed
