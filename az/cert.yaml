@@ -1,0 +1,12 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: tb-cert
+  namespace: thingsboard
+spec:
+  secretName: tb-certificate
+  dnsNames:
+  - tb.gateway.uno
+  issuerRef:
+    name: letsencrypt-issuer
+    kind: ClusterIssuer
