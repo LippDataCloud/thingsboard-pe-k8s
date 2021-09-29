@@ -1,6 +1,9 @@
 #!/bin/bash
 
 function installCertmanager(){
+    helm repo add jetstack https://charts.jetstack.io
+    helm repo update
+
     helm install \
     cert-manager jetstack/cert-manager \
     --namespace cert-manager \
@@ -9,5 +12,8 @@ function installCertmanager(){
     --set installCRDs=true
 }
 
-kubectl apply -f cert-issuer.yaml
+installCertmanager
 
+kubectl apply -f cert-issuer.yaml
+kubectl apply -f cert.yaml
+kubectl apply -f routes-cert.yml
