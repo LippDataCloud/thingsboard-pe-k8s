@@ -55,7 +55,7 @@ spec:
         image: store/thingsboard/tb-pe-node:3.2.2PE
         resources:
           limits:
-            cpu: "1000m"
+            cpu: "4000m"
             memory: 2Gi
           requests:
             cpu: "1000m"
