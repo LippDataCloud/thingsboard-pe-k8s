@@ -37,7 +37,7 @@ spec:
     - host: trendz.tb.gateway.uno
       http:
         paths:
-          - path: /
+          - path: /.*
             pathType: Prefix
             backend:
               service:
@@ -72,8 +72,13 @@ spec:
                 name: tb-node
                 port:
                   number: 8080
-              # serviceName: tb-node
-              # servicePort: 8080
+          - path: /static/trendz-tb-lib.js
+            pathType: Prefix
+            backend:
+              service:
+                name: tb-node
+                port:
+                  number: 8080
           - path: /static/.*
             pathType: Prefix
             backend:
