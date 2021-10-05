@@ -10,3 +10,16 @@ spec:
   issuerRef:
     name: letsencrypt-issuer
     kind: ClusterIssuer
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: tb-trendz-cert
+  namespace: thingsboard
+spec:
+  secretName: tb-trendz-certificate
+  dnsNames:
+  - trendz.tb.gateway.uno
+  issuerRef:
+    name: letsencrypt-issuer
+    kind: ClusterIssuer

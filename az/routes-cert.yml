@@ -30,7 +30,20 @@ spec:
     - hosts:
         - tb.gateway.uno
       secretName: tb-certificate
+    - hosts:
+        - trendz.tb.gateway.uno
+      secretName: tb-trendz-certificate
   rules:
+    - host: trendz.tb.gateway.uno
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: tb-trendz
+                port:
+                  number: 8888
     - host: tb.gateway.uno
       http:
         paths:
@@ -97,5 +110,3 @@ spec:
                   number: 8080
               # serviceName: tb-node
               # servicePort: 8080
----
-
