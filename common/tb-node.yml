@@ -39,6 +39,9 @@ spec:
         - name: tb-node-data
           persistentVolumeClaim:
             claimName: tb-node-license-pv-claim
+        - name: tb-node-extensions
+          persistentVolumeClaim:
+            claimName: tb-node-extensions
         - name: tb-node-config
           configMap:
             name: tb-node-config
@@ -102,6 +105,8 @@ spec:
             name: tb-node-config
           - mountPath: /data
             name: tb-node-data
+          - mountPath: /usr/share/thingsboard/extensions
+            name: tb-node-extensions
         readinessProbe:
           httpGet:
             path: /login
