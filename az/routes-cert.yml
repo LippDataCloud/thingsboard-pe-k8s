@@ -54,8 +54,6 @@ spec:
                 name: tb-node
                 port:
                   number: 8080
-              # serviceName: tb-node
-              # servicePort: 8080
           - path: /api/v1/.*
             pathType: Prefix
             backend:
@@ -63,8 +61,6 @@ spec:
                 name: tb-http-transport
                 port:
                   number: 8080
-              # serviceName: tb-http-transport
-              # servicePort: 8080
           - path: /static/rulenode/.*
             pathType: Prefix
             backend:
@@ -86,8 +82,6 @@ spec:
                 name: tb-web-ui
                 port:
                   number: 8080
-              # serviceName: tb-web-ui
-              # servicePort: 8080
           - path: /index.html.*
             pathType: Prefix
             backend:
@@ -95,8 +89,6 @@ spec:
                 name: tb-web-ui
                 port:
                   number: 8080
-              # serviceName: tb-web-ui
-              # servicePort: 8080
           - path: /
             pathType: Prefix
             backend:
@@ -104,8 +96,6 @@ spec:
                 name: tb-web-ui
                 port:
                   number: 8080
-              # serviceName: tb-web-ui
-              # servicePort: 8080
           - path: /.*
             pathType: Prefix
             backend:
@@ -113,5 +103,3 @@ spec:
                 name: tb-node
                 port:
                   number: 8080
-              # serviceName: tb-node
-              # servicePort: 8080
