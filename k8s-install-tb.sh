@@ -108,6 +108,7 @@ if [ "$PLATFORM" == "aws" ]; then
   kubectl apply -f common/tb-node-license-pv-claim-aws.yml
 elif [ "$PLATFORM" == "az-aks" ]; then
   kubectl apply -f common/tb-node-license-pv-claim-aks.yml
+  kubectl apply -f common/tb-trendz-pv-claim.yml
 else
   kubectl apply -f common/tb-node-license-pv-claim.yml
 fi
