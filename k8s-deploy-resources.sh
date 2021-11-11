@@ -32,12 +32,14 @@ kubectl apply -f common/thingsboard.yml
 
 kubectl apply -f common/tb-node.yml
 
+kubectl apply -f common/tb-trendz.yml
+
 if [ "$PLATFORM" == "minikube" ]; then
     kubectl apply -f $PLATFORM/routes.yml
 elif [ "$PLATFORM" == "aws-eks" ]; then
     kubectl apply -f common/routes.yml
 elif [ "$PLATFORM" == "az-aks" ]; then
-    kubectl apply -f common/routes.yml
+    kubectl apply -f az/routes-cert.yml
 elif [ "$PLATFORM" == "gcp" ]; then
     kubectl apply -f common/routes.yml
 elif [ "$PLATFORM" == "aws" ]; then

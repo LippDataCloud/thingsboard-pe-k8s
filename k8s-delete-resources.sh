@@ -21,3 +21,4 @@ kubectl config set-context $(kubectl config current-context) --namespace=thingsb
 
 kubectl delete -f common/thingsboard.yml
 kubectl delete -f common/tb-node.yml
+kubectl delete -f common/tb-trendz.yml
