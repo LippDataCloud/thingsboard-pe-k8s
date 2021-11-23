@@ -33,7 +33,20 @@ spec:
     - hosts:
         - trendz.tb.gateway.uno
       secretName: tb-trendz-certificate
+    - hosts:
+        - www.gdc.swiss
+      secretName: gdc-certificate
   rules:
+    - host: www.gdc.swiss
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: helloworld-http
+                port:
+                  number: 8080
     - host: trendz.tb.gateway.uno
       http:
         paths:
