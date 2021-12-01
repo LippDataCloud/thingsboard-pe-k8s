@@ -2,6 +2,15 @@
 
 This folder containing scripts and Kubernetes resources configurations to run ThingsBoard in Microservices mode.
 
+
+https://itnext.io/resizing-statefulset-persistent-volumes-with-zero-downtime-916ebc65b1d4
+
+Tricks for using env in wsl on windows
+
+```bash
+export $(grep -v '^#' .env | xargs)         
+printenv DATABASE
+```
 ## Prerequisites
 
 ThingsBoard Microservices run on the Kubernetes cluster.
