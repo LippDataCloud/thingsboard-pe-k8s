@@ -14,6 +14,7 @@ function installCertmanager(){
 
 installCertmanager
 
-kubectl apply -f cert-issuer.yaml
+kubectl apply -f cluster-issuer.yaml
 kubectl apply -f cert.yaml
+kubectl apply -f cert-gdc.yaml
 kubectl apply -f routes-cert.yml
