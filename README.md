@@ -1,5 +1,7 @@
 # Kubernetes resources configuration for ThingsBoard Microservices
 
+`!!! Important, this repo wan't be used any more. Go to [tb-ldc](https://github.com/LippDataCloud/tb-ldc)`
+
 This folder containing scripts and Kubernetes resources configurations to run ThingsBoard in Microservices mode.
 
 
